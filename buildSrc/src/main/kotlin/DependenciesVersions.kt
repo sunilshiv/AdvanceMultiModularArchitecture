@@ -6,9 +6,11 @@ object DependenciesVersions {
     const val JUNIT = "4.13.2"
     const val JUNIT_VERSION = "1.1.5"
     const val ESPRESSO_CORE = "3.5.1"
-    const val ACTIVITY_COMPOSE = "1.8.0"
-    const val COMPOSE_UI = "1.6.8"
+    const val ACTIVITY_COMPOSE = "1.10.1"
+    const val COMPOSE_UI = "1.8.2"
     const val  MATERIAL_3 = "1.12.0"
     const val APP_COMPACT_VERSION = "1.6.1"
+    const val ACTIVITY_COMPOSE_BOM = "2024.05.00"
+    const val COMPOSE_UI_TEST = "1.1.0"
 
 }

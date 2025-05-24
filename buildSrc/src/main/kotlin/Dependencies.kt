@@ -11,4 +11,5 @@ object Dependencies {
     const val ANDROIDX_UI_TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${DependenciesVersions.COMPOSE_UI}"
     const val ANDROIDX_MATERIAL3= "com.google.android.material:material:${DependenciesVersions.MATERIAL_3}"
     const val ANDROIDX_APP_COMPACT = "androidx.appcompat:appcompat:${DependenciesVersions.APP_COMPACT_VERSION}"
+    const val ANDROIDX_ACTIVITY_COMPOSE_BOM = "androidx.compose:compose-bom:${DependenciesVersions.ACTIVITY_COMPOSE_BOM}"
 }

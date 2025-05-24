@@ -40,9 +40,18 @@ dependencies {
     implementation(Dependencies.ANDROIDX_CORE)
     implementation(Dependencies.ANDROIDX_APP_COMPACT)
     implementation(Dependencies.ANDROIDX_MATERIAL3)
+    implementation(Dependencies.ANDROIDX_ACTIVITY_COMPOSE)
+    implementation(Dependencies.ANDROIDX_UI)
+    implementation(Dependencies.ANDROIDX_UI_GRAPHICS)
+    implementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
 
     //Test dependencies
     testImplementation(TestDependencies.ANDROIDX_JUNIT_VERSION)
     androidTestImplementation(TestDependencies.ANDROIDX_JUNIT)
     androidTestImplementation(TestDependencies.ANDROIDX_ESPRESSO_CORE)
+    androidTestImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST)
+
+    //Debug dependencies
+    debugImplementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
+    debugImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST_MANIFEST)
 }
