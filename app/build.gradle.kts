@@ -1,6 +1,7 @@
 plugins {
     id(BuildPlugins.ANDROID_APPLICATION)
     id(BuildPlugins.KOTLIN_ANDROID)
+   // alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
@@ -44,6 +45,10 @@ dependencies {
     implementation(Dependencies.ANDROIDX_UI)
     implementation(Dependencies.ANDROIDX_UI_GRAPHICS)
     implementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
 
     //Test dependencies
     testImplementation(TestDependencies.ANDROIDX_JUNIT_VERSION)
