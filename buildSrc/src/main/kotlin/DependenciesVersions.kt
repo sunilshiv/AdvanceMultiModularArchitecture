@@ -11,6 +11,6 @@ object DependenciesVersions {
     const val  MATERIAL_3 = "1.12.0"
     const val APP_COMPACT_VERSION = "1.6.1"
     const val ACTIVITY_COMPOSE_BOM = "2024.05.00"
-    const val COMPOSE_UI_TEST = "1.1.0"
+    const val ACTIVITY_CONSTRAINTLAYOUT = "2.1.4"
 
 }
