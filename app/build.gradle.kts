@@ -19,13 +19,30 @@ android {
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
+        getByName(BuildTypes.RELEASE){
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            isMinifyEnabled = Build.Release.isMinifyEnabled
+            isDebuggable = Build.Release.isDebuggable
+            enableUnitTestCoverage = Build.Release.enableUnitTestCoverage
         }
+        getByName(BuildTypes.DEBUG) {
+            isMinifyEnabled = Build.Debug.isMinifyEnabled
+            isDebuggable = Build.Debug.isDebuggable
+            enableUnitTestCoverage = Build.Debug.enableUnitTestCoverage
+            versionNameSuffix = Build.Debug.versionNameSuffix
+            applicationIdSuffix = Build.Debug.applicationIdSuffix
+        }
+        create(BuildTypes.RELEASE_QA) {
+            isMinifyEnabled = Build.ReleaseExternalQa.isMinifyEnabled
+            isDebuggable = Build.ReleaseExternalQa.isDebuggable
+            enableUnitTestCoverage = Build.ReleaseExternalQa.enableUnitTestCoverage
+            versionNameSuffix = Build.ReleaseExternalQa.versionNameSuffix
+            applicationIdSuffix = Build.ReleaseExternalQa.applicationIdSuffix
+        }
+
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -45,10 +62,9 @@ dependencies {
     implementation(Dependencies.ANDROIDX_UI)
     implementation(Dependencies.ANDROIDX_UI_GRAPHICS)
     implementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
+    //implementation(libs.material)
+    implementation(Dependencies.ANDROIDX_ACTIVITY)
+    implementation(Dependencies.ANDROIDX_CONSTRAINTLAYOUT)
 
     //Test dependencies
     testImplementation(TestDependencies.ANDROIDX_JUNIT_VERSION)
