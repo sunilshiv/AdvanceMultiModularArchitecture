@@ -44,6 +44,17 @@ android {
         }
 
     }
+
+    flavorDimensions.add(BuildDimensions.APP)
+    flavorDimensions.add(BuildDimensions.STORE)
+
+    productFlavors{
+        BuildFlavour.Google.create(this)
+        BuildFlavour.Huawei.create(this)
+        BuildFlavour.Client.create(this)
+        BuildFlavour.Driver.create(this)
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
