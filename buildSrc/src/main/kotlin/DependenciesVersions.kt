@@ -8,9 +8,10 @@ object DependenciesVersions {
     const val ESPRESSO_CORE = "3.5.1"
     const val ACTIVITY_COMPOSE = "1.10.1"
     const val COMPOSE_UI = "1.8.2"
-    const val  MATERIAL_3 = "1.12.0"
+   // const val  MATERIAL_3 = "1.12.0"
     const val APP_COMPACT_VERSION = "1.6.1"
     const val ACTIVITY_COMPOSE_BOM = "2024.05.00"
     const val ACTIVITY_CONSTRAINTLAYOUT = "2.1.4"
+    const val Android_MATERIAL_3 = "1.2.1"
 
 }
