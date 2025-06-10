@@ -56,26 +56,34 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.8"
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
+    }
+
+    buildFeatures {
+        compose = true
     }
 }
 
 dependencies {
 
     implementation(Dependencies.ANDROIDX_CORE)
-    implementation(Dependencies.ANDROIDX_APP_COMPACT)
-    implementation(Dependencies.ANDROIDX_MATERIAL3)
     implementation(Dependencies.ANDROIDX_ACTIVITY_COMPOSE)
     implementation(Dependencies.ANDROIDX_UI)
     implementation(Dependencies.ANDROIDX_UI_GRAPHICS)
     implementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
-    //implementation(libs.material)
     implementation(Dependencies.ANDROIDX_ACTIVITY)
     implementation(Dependencies.ANDROIDX_CONSTRAINTLAYOUT)
+    implementation(Dependencies.ANDROIDX_MATERIAL3)
+    implementation(Dependencies.ANDROIDX_LIFECYCLE_RUNTIME_KTX)
+    implementation(platform(Dependencies.ANDROIDX_ACTIVITY_COMPOSE_BOM))
 
     //Test dependencies
     testImplementation(TestDependencies.ANDROIDX_JUNIT_VERSION)
@@ -86,4 +94,5 @@ dependencies {
     //Debug dependencies
     debugImplementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
     debugImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST_MANIFEST)
+
 }
