@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             AdvanceMultiModularArchitectureTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = DataProvider.userName,
+                        name = MapProvider.MAPID,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
