@@ -15,7 +15,7 @@ sealed class Build {
 
     object ReleaseExternalQa : Build() {
         override val versionNameSuffix = "-QA"
-        override val applicationIdSuffix = "releaseExternalQA"
+        override val applicationIdSuffix = "release_qa"
         override val isMinifyEnabled = false
         override val isDebuggable = false
         override val enableUnitTestCoverage = true
