@@ -3,7 +3,6 @@ import build.BuildCreator
 import build.BuildDimensions
 import deps.Dependencies
 import flavours.BuildFlavour
-import plugs.BuildPlugins
 import release.ReleaseConfig
 import signing.BuildSigning
 import signing.SigningTypes
@@ -13,7 +12,8 @@ import test.TestDependencies
 plugins {
     id(plugs.BuildPlugins.ANDROID_APPLICATION)
     id(plugs.BuildPlugins.KOTLIN_ANDROID)
-   // alias(libs.plugins.jetbrains.kotlin.android)
+    id(plugs.BuildPlugins.ANDROID)
+    kotlin(plugs.BuildPlugins.KAPT)
 }
 
 android {
