@@ -7,11 +7,11 @@
     </base-config>
 
     <!--for production builds-->
-    <domain-config cleartextTrafficPermitted="false">
+   <!-- <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">qa.myapp.com</domain>
         <pin-set>
             <pin digest="SHA-256">46YGkdskakgasjagsjasjgasssdgyfdhfsgsdasdfhhewkagshOspdspskkdsgRg=</pin>
         </pin-set>
-    </domain-config>
+    </domain-config>-->
 
 </network-security-config>
