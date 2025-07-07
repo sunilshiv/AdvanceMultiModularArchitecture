@@ -1,3 +1,7 @@
+package test
+
+import deps.DependenciesVersions
+
 object TestDependencies {
     //androidx-ui = { group = "", name = "ui" }
     const val ANDROIDX_JUNIT_VERSION = "junit:junit:${DependenciesVersions.JUNIT}"

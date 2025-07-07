@@ -1,3 +1,5 @@
+package release
+
 object ReleaseConfig {
 
     const val VERSION_CODE = 1
