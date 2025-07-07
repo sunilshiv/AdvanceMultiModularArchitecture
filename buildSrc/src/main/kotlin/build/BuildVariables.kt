@@ -1,3 +1,5 @@
+package build
+
 object BuildVariables {
 
     const val BASE_URL = "BASE_URL"
