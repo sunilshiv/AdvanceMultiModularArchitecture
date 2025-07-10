@@ -12,11 +12,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.room.Room
 import com.demo.advancemultimodulararchitecture.ui.theme.AdvanceMultiModularArchitectureTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+       // val room = Room.databaseBuilder()
         enableEdgeToEdge()
         setContent {
             AdvanceMultiModularArchitectureTheme {

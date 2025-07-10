@@ -2,11 +2,12 @@ package deps
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.kotlin.dsl.project
+import test.TestDependencies
 
 fun DependencyHandler.room(){
     implementation(Dependencies.ROOM_RUNTIME)
-    implementation(Dependencies.ROOM_COMPILER)
-    kapt(Dependencies.ROOM_KTX)
+    kapt(Dependencies.ROOM_COMPILER)
+    implementation(Dependencies.ROOM_KTX)
 }
 
 fun DependencyHandler.retrofit(){
@@ -35,7 +36,7 @@ fun DependencyHandler.androidx(){
     implementation(Dependencies.ANDROIDX_CONSTRAINTLAYOUT)
     implementation(Dependencies.ANDROIDX_MATERIAL3)
     implementation(Dependencies.ANDROIDX_LIFECYCLE_RUNTIME_KTX)
-    implementation(Dependencies.ANDROIDX_ACTIVITY_COMPOSE_BOM)
+   //implementation(platform(Dependencies.ANDROIDX_ACTIVITY_COMPOSE_BOM).toString())
 }
 
 fun DependencyHandler.loginModule() {
@@ -44,4 +45,19 @@ fun DependencyHandler.loginModule() {
 
 fun DependencyHandler.homeModule() {
     moduleImplementation(project(":features:home"))
+}
+
+fun DependencyHandler.testDeps(){
+    testImplementation(TestDependencies.ANDROIDX_JUNIT_VERSION)
+}
+
+fun DependencyHandler.testImplDeps(){
+    androidTestImplementation(TestDependencies.ANDROIDX_JUNIT)
+    androidTestImplementation(TestDependencies.ANDROIDX_ESPRESSO_CORE)
+    androidTestImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST)
+}
+
+fun DependencyHandler.testDebugDeps(){
+    debugImplementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
+    debugImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST_MANIFEST)
 }
