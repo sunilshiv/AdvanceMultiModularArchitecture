@@ -2,12 +2,20 @@ import build.BuildConfig
 import build.BuildCreator
 import build.BuildDimensions
 import deps.Dependencies
+import deps.androidx
+import deps.hilt
+import deps.loginModule
+import deps.okhttp
+import deps.retrofit
+import deps.room
+import deps.testDebugDeps
+import deps.testDeps
+import deps.testImplDeps
 import flavours.BuildFlavour
 import release.ReleaseConfig
 import signing.BuildSigning
 import signing.SigningTypes
 import test.TestBuildConfig
-import test.TestDependencies
 
 plugins {
     id(plugs.BuildPlugins.ANDROID_APPLICATION)
@@ -80,29 +88,20 @@ android {
         compose = true
         buildConfig = true
     }
+
 }
 
 dependencies {
-
-    implementation(Dependencies.ANDROIDX_CORE)
-    implementation(Dependencies.ANDROIDX_ACTIVITY_COMPOSE)
-    implementation(Dependencies.ANDROIDX_UI)
-    implementation(Dependencies.ANDROIDX_UI_GRAPHICS)
-    implementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
-    implementation(Dependencies.ANDROIDX_ACTIVITY)
-    implementation(Dependencies.ANDROIDX_CONSTRAINTLAYOUT)
-    implementation(Dependencies.ANDROIDX_MATERIAL3)
-    implementation(Dependencies.ANDROIDX_LIFECYCLE_RUNTIME_KTX)
+    loginModule()
+    androidx()
     implementation(platform(Dependencies.ANDROIDX_ACTIVITY_COMPOSE_BOM))
-
-    //Test dependencies
-    testImplementation(TestDependencies.ANDROIDX_JUNIT_VERSION)
-    androidTestImplementation(TestDependencies.ANDROIDX_JUNIT)
-    androidTestImplementation(TestDependencies.ANDROIDX_ESPRESSO_CORE)
-    androidTestImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST)
-
-    //Debug dependencies
-    debugImplementation(Dependencies.ANDROIDX_UI_TOOLING_PREVIEW)
-    debugImplementation(TestDependencies.ANDROIDX_COMPOSE_UI_TEST_MANIFEST)
+    room()
+    annotationProcessor(Dependencies.ROOM_COMPILER)
+    hilt()
+    retrofit()
+    okhttp()
+    testDeps()
+    testImplDeps()
+    testDebugDeps()
 
 }
