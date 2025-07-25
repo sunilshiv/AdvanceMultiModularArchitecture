@@ -2,6 +2,7 @@ import build.BuildConfig
 import build.BuildCreator
 import build.BuildDimensions
 import deps.Dependencies
+import deps.DependenciesVersions
 import deps.androidx
 import deps.hilt
 import deps.loginModule
@@ -78,10 +79,10 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
+        kotlinCompilerExtensionVersion = DependenciesVersions.KOTLIN_COMPILER
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     buildFeatures {
