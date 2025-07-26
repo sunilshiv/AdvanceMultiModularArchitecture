@@ -23,6 +23,7 @@ plugins {
     id(plugs.BuildPlugins.KOTLIN_ANDROID)
     id(plugs.BuildPlugins.ANDROID)
     id(plugs.BuildPlugins.KAPT)
+    id(plugs.BuildPlugins.KTLINT)
 }
 
 android {
