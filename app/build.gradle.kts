@@ -50,7 +50,7 @@ android {
         BuildCreator.Release(project).create(this).apply {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
             signingConfig = signingConfigs.getByName(SigningTypes.RELEASE)
         }
@@ -61,13 +61,12 @@ android {
         BuildCreator.Debug(project).create(this).apply {
             signingConfig = signingConfigs.getByName(SigningTypes.DEBUG)
         }
-
     }
 
     flavorDimensions.add(BuildDimensions.APP)
     flavorDimensions.add(BuildDimensions.STORE)
 
-    productFlavors{
+    productFlavors {
         BuildFlavour.Google.create(this)
         BuildFlavour.Huawei.create(this)
         BuildFlavour.Client.create(this)
@@ -75,22 +74,21 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     composeOptions {
         kotlinCompilerExtensionVersion = DependenciesVersions.KOTLIN_COMPILER
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     buildFeatures {
         compose = true
         buildConfig = true
     }
-
 }
 
 dependencies {
@@ -105,5 +103,4 @@ dependencies {
     testDeps()
     testImplDeps()
     testDebugDeps()
-
 }
