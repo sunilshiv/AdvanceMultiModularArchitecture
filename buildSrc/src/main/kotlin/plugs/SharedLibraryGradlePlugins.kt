@@ -24,6 +24,7 @@ class SharedLibraryGradlePlugins : Plugin<Project> {
     private fun Project.addPluginConfigurations() {
         plugins.apply(BuildPlugins.KOTLIN_ANDROID)
         plugins.apply(BuildPlugins.KAPT)
+        plugins.apply(BuildPlugins.KTLINT)
     }
 
     private fun Project.addAndroidConfigurations() {
@@ -66,8 +67,8 @@ class SharedLibraryGradlePlugins : Plugin<Project> {
                 BuildFlavour.Driver.createLibrary(this)
             }
             compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_11
-                targetCompatibility = JavaVersion.VERSION_11
+                sourceCompatibility = JavaVersion.VERSION_17
+                targetCompatibility = JavaVersion.VERSION_17
             }
             composeOptions {
                 kotlinCompilerExtensionVersion = DependenciesVersions.KOTLIN_COMPILER
@@ -83,7 +84,7 @@ class SharedLibraryGradlePlugins : Plugin<Project> {
     private fun Project.applyKotlinConfigurations() {
         tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
             kotlinOptions {
-                jvmTarget = JavaVersion.VERSION_11.toString()
+                jvmTarget = JavaVersion.VERSION_17.toString()
             }
         }
 

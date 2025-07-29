@@ -9,7 +9,6 @@ import plugs.SharedLibraryGradlePlugins
 
 plugins {
     id(plugs.BuildPlugins.ANDROID_LIBRARY)
-
 }
 apply<SharedLibraryGradlePlugins>()
 android {
