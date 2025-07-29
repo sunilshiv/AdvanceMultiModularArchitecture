@@ -1,5 +1,5 @@
 package com.demo.advancemultimodulararchitecture.provider
 
 object DataProvider {
-    const val userName = "Sunil-Huawei"
+  const val USER_NAME = "Sunil-Huawei"
 }
