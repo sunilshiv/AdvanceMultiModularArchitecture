@@ -4,27 +4,34 @@ apply<SpotlessPlugin>()
 
 configure<com.diffplug.gradle.spotless.SpotlessExtension> {
 
-    format("xml") {
-        target("**/*.xml")
-        prettier(mapOf(
-            "prettier" to "2.7.1",
-            "@prettier/plugin-xml" to "2.2.0"
-        )).config(
-            mapOf(
-                "parser" to "xml",
-                "tabWidth" to 4,
-                "printWidth" to 80,
-                "useTabs" to false,
-                "semi" to true,
-                "singleQuote" to false,
-                "attributeSortOrder" to arrayOf("name", "id", "type"),
-                "selfClosingTags" to arrayOf("br", "img")
-            )
-        )
-        indentWithSpaces(4)
-        trimTrailingWhitespace()
-        endWithNewline()
-    }
+
+//    format("xml") {
+//        target("**/*.xml")
+//
+//        prettier(
+//            mapOf(
+//                "prettier" to "3.2.5",
+//                "@prettier/plugin-xml" to "3.1.0"
+//            )
+//        ).config(
+//            mapOf(
+//                "parser" to "xml",
+//                "tabWidth" to 4,
+//                "printWidth" to 80,
+//                "useTabs" to false,
+//                "semi" to true,
+//                "singleQuote" to false,
+//                "attributeSortOrder" to listOf("name", "id", "type"),
+//                "selfClosingTags" to listOf("br", "img")
+//            )
+//        )
+//
+//        // Removed: indentWithSpaces(4)
+//        trimTrailingWhitespace()
+//        endWithNewline()
+//    }
+
+
 
     kotlin {
         target("**/*.kt")
