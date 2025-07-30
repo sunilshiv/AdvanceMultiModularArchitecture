@@ -71,8 +71,9 @@ tasks.register<ReportMergeTask>("mergeDetektReports") {
 
 // Hook tasks for CI or Gradle flow
 tasks.named("detekt") {
-    dependsOn("detektBaseline")
+    dependsOn(":app:detektBaseline")
     dependsOn(":features:login:detektBaseline")
+    inputs.file(file("${rootProject.projectDir}/detekt/detekt-baseline.xml"))
 }
 
 tasks.named("preBuild") {
