@@ -36,6 +36,9 @@ class MainActivity : ComponentActivity() {
   }
 }
 
+fun loginloginloginloginloginloginloginloginloginloginloginloginloginlogin() {
+}
+
 @Composable
 @Suppress("FunctionNaming")
 fun Greeting(modifier: Modifier = Modifier) {
