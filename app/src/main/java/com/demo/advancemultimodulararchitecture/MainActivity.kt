@@ -12,15 +12,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.demo.advancemultimodulararchitecture.ui.theme.AdvanceMultiModularArchitectureTheme
+import com.demo.advancemultimodulararchitecture.ui.theme.AdvancedMultiModularArchitectureTheme
 
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+
     // val room = Room.databaseBuilder()
     enableEdgeToEdge()
     setContent {
-      AdvanceMultiModularArchitectureTheme {
+      AdvancedMultiModularArchitectureTheme {
         Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
           Greeting(
             modifier = Modifier.padding(innerPadding),
@@ -28,6 +29,10 @@ class MainActivity : ComponentActivity() {
         }
       }
     }
+
+    val counter = 100
+
+    println(counter)
   }
 }
 
@@ -35,22 +40,19 @@ class MainActivity : ComponentActivity() {
 fun Greeting(modifier: Modifier = Modifier) {
   Column(modifier = modifier) {
     Text(
-      text = "Base Url :  ${BuildConfig.BASE_URL}!",
+      text = "Base Url: ${BuildConfig.BASE_URL}!",
       modifier = modifier,
     )
-
     Text(
-      text = "DB VERSION :${BuildConfig.DB_VERSION}",
+      text = "DB Version: ${BuildConfig.DB_VERSION}!",
       modifier = modifier,
     )
-
     Text(
-      text = "CAN CLEAR CACHE : ${BuildConfig.CAN_CLEAR_CACHE} ",
+      text = "Can Clear Cache: ${BuildConfig.CAN_CLEAR_CACHE}!",
       modifier = modifier,
     )
-
     Text(
-      text = "MAP KEY : ${BuildConfig.MAP_KEY}",
+      text = "Map Key: ${BuildConfig.MAP_KEY}!",
       modifier = modifier,
     )
   }
@@ -59,7 +61,7 @@ fun Greeting(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-  AdvanceMultiModularArchitectureTheme {
+  AdvancedMultiModularArchitectureTheme {
     Greeting()
   }
 }
