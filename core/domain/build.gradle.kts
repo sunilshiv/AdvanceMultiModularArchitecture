@@ -1,7 +1,3 @@
-import deps.Dependencies
-import deps.androidx
-import deps.hilt
-import deps.room
 import deps.testDebugDeps
 import deps.testDeps
 import deps.testImplDeps
@@ -12,14 +8,10 @@ plugins {
 }
 apply<SharedLibraryGradlePlugins>()
 android {
-    namespace = "com.demo.login"
+    namespace = "com.demo.domain"
 }
 
 dependencies {
-    androidx()
-    implementation(platform(Dependencies.ANDROIDX_ACTIVITY_COMPOSE_BOM))
-    room()
-    hilt()
     testDeps()
     testImplDeps()
     testDebugDeps()
