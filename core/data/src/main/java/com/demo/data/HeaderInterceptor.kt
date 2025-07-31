@@ -18,8 +18,8 @@ const val ENGLISH_LANGUAGE = "en-US"
 class HeaderInterceptor(
     private val clientId: String,
     private val accessTokenProvider: () -> String?,
-    private val languageProvider: () -> Locale
-    ): Interceptor {
+    private val languageProvider: () -> Locale,
+) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
