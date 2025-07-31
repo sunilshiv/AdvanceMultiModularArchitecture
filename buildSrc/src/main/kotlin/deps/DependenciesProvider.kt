@@ -23,7 +23,11 @@ fun DependencyHandler.okhttp(){
 
 fun DependencyHandler.hilt(){
     implementation(Dependencies.HILT_ANDROID)
+    implementation(Dependencies.hiltCompose)
+    implementation(Dependencies.hiltNavigation)
     kapt(Dependencies.HILT_COMPILER)
+    kapt(Dependencies.HILT_AGP)
+    kapt(Dependencies.hiltCompilerKapt)
 }
 
 fun DependencyHandler.androidx(){

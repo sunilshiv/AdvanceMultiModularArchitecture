@@ -1,4 +1,3 @@
 package com.demo.domain
 
-class MyClass {
-}
+class MyClass
