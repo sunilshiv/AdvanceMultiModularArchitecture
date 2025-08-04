@@ -28,6 +28,7 @@ sealed class BuildCreator(val name:String) {
                 buildConfigIntField(BuildVariables.DB_VERSION, project.getLocalProperty("dev.db_version"))
                 buildConfigBooleanField(BuildVariables.CAN_CLEAR_CACHE, project.getLocalProperty("dev.clear_cache"))
                 buildConfigStringField(BuildVariables.MAP_KEY, project.getLocalProperty("dev.map_key"))
+                buildConfigStringField(BuildVariables.PIN_CERTIFICATE, project.getLocalProperty("dev.project.certificate_pin"))
             }
         }
 
@@ -50,6 +51,7 @@ sealed class BuildCreator(val name:String) {
                 buildConfigIntField(BuildVariables.DB_VERSION, project.getLocalProperty("dev.db_version"))
                 buildConfigBooleanField(BuildVariables.CAN_CLEAR_CACHE, project.getLocalProperty("dev.clear_cache"))
                 buildConfigStringField(BuildVariables.MAP_KEY, project.getLocalProperty("release.map_key"))
+                buildConfigStringField(BuildVariables.PIN_CERTIFICATE, project.getLocalProperty("release.project.certificate_pin"))
             }
         }
 
@@ -74,6 +76,7 @@ sealed class BuildCreator(val name:String) {
                 buildConfigIntField(BuildVariables.DB_VERSION, project.getLocalProperty("dev.db_version"))
                 buildConfigBooleanField(BuildVariables.CAN_CLEAR_CACHE, project.getLocalProperty("dev.clear_cache"))
                 buildConfigStringField(BuildVariables.MAP_KEY, project.getLocalProperty("dev.map_key"))
+                buildConfigStringField(BuildVariables.PIN_CERTIFICATE, project.getLocalProperty("dev.project.certificate_pin"))
             }
         }
 
