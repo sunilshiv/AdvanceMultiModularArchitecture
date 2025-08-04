@@ -44,7 +44,7 @@ class NetworkModule {
     fun provideHeaderInterceptor(
         @Named("ClientId") clientId: String,
         @Named("AccessToken") accessToken: () -> String?,
-        @Named("Language") language: () -> Locale
+        @Named("Language") language: () -> Locale,
     ): Interceptor {
         return HeaderInterceptor(clientId, accessToken, language)
     }
@@ -55,31 +55,30 @@ class NetworkModule {
     @Named("OkHttpLoggingIntercept0r")
     fun providerOkHttpLoggingIntercept0r(): Interceptor {
         val interceptor = HttpLoggingInterceptor()
-        interceptor.level = if (BuildConfig.DEBUG){
+        interceptor.level = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor.Level.BODY
-        }else{
+        } else {
             HttpLoggingInterceptor.Level.NONE
         }
-        if(!BuildConfig.DEBUG){
+        if (!BuildConfig.DEBUG) {
             interceptor.redactHeader(CLIENT_ID_HEADER)
-            interceptor.redactHeader(AUTHORIZATION_HEADER) //Redact any header that contains sensitive header.
+            interceptor.redactHeader(AUTHORIZATION_HEADER) // Redact any header that contains sensitive header.
         }
         return interceptor
     }
 
-    //OKHttp call factory
+    // OKHttp call factory
     @Provides
     @Singleton
     @Named("OkHttpCallFactory")
-    fun providerOkHttpCallFactory(interceptor: Interceptor): Call.Factory{
+    fun providerOkHttpCallFactory(interceptor: Interceptor): Call.Factory {
         return OkHttpClient.Builder().addInterceptor(interceptor)
             .retryOnConnectionFailure(true)
             .followRedirects(false)
             .followSslRedirects(false)
-            .connectTimeout(60,TimeUnit.SECONDS)
+            .connectTimeout(60, TimeUnit.SECONDS)
             .readTimeout(60, TimeUnit.SECONDS)
             .writeTimeout(60, TimeUnit.SECONDS)
             .build()
     }
-
 }
